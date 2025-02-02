@@ -1,4 +1,4 @@
-import SpellBook from "./components/SpellBook/SpellBook";
+import SpellBook from "../components/SpellBook/SpellBook";
 
 export default function Home() {
   return (

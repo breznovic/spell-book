@@ -4,4 +4,5 @@ export type Spell = {
   level: number;
   school: string;
   description: string;
+  image_url: string;
 };

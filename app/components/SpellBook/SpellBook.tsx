@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Spell } from "@/app/utils/types";
+import SpellCard from "../SpellCard/SpellCard";
+import s from "./SpellBook.module.css";
 
 const SpellBook = () => {
   const [spells, setSpells] = useState([]);
@@ -17,17 +19,10 @@ const SpellBook = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Spell Book</h1>
-      <h2>Spells</h2>
-      <ul>
-        {spells.map((spell: Spell) => (
-          <li key={spell.id}>
-            {spell.name} (Level {spell.level}, School: {spell.school})<br />
-            {spell.description}
-          </li>
-        ))}
-      </ul>
+    <div className={s.spellsContainer}>
+      {spells.map((spell: Spell) => (
+        <SpellCard key={spell.id} spell={spell} />
+      ))}
     </div>
   );
 };
