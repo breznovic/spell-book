@@ -1,12 +1,22 @@
 .spell {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 10px;
+  padding: 20px;
   margin-bottom: 10px;
   background-color: #f9f9f9;
   box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2);
   font-size: 20px;
-  max-width: 300px;
+  width: 320px;
+  gap: 30px;
+  text-wrap: nowrap;
+}
+
+.spell:hover {
+  box-shadow: 5px 4px 3px rgba(0, 0, 0, 0.2);
 }
 
 .title {
@@ -17,8 +27,50 @@
   margin-top: 5px;
 }
 
+.imageContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
 .image {
+  border: 1px solid #68656580;
+  border-radius: 15%;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+}
+
+.image:hover {
+  outline: 2px solid #686565;
+}
+
+.spellInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.level {
+  color: darkslategrey;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.icon {
+  color: darkslategrey;
   border: 1px solid #68656580;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   padding: 5px;
+  border-radius: 35%;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.icon:hover {
+  scale: 1.1;
 }

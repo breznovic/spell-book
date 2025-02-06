@@ -3,6 +3,11 @@
 import { useEffect, useState, use } from "react";
 import axios from "axios";
 import { Spell } from "@/app/utils/types";
+import s from "./page.module.css";
+import Image from "next/image";
+import Loader from "@/app/components/Loader/Loader";
+import Button from "@/app/components/Button/Button";
+import Link from "next/link";
 
 type SpellDetailProps = {
   params: Promise<{
@@ -32,15 +37,29 @@ const SpellDescription = ({ params }: SpellDetailProps) => {
   }, [id]);
 
   if (!spell) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   return (
-    <div>
-      <h1>{spell.name}</h1>
-      <p>{spell.description}</p>
-      <p>Level: {spell.level}</p>
-      <p>School: {spell.school}</p>
+    <div className={s.container}>
+      <h1 className={s.title}>{spell.name}</h1>
+      <div className={s.card}>
+        <div className={s.info}>
+          <p className={s.details}>Level: {spell.level}</p>
+          <p className={s.details}>School: {spell.school}</p>
+        </div>
+        <Image
+          src={spell.image_url}
+          alt={spell.name}
+          className={s.image}
+          width={300}
+          height={300}
+        />
+        <p className={s.description}>{spell.description}</p>
+      </div>
+      <Link href="/">
+        <Button title="Back to Spells" />
+      </Link>
     </div>
   );
 };

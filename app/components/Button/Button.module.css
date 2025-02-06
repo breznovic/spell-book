@@ -1,0 +1,27 @@
+.button {
+  background-color: #1a9e1f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  text-wrap: nowrap;
+  font-family: var(--font-lobster-sans);
+}
+
+.button:hover {
+  background-color: #2aaa30;
+}
+
+.button:disabled {
+  background-color: #999494;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 640px) {
+  .button {
+    font-size: 16px;
+    padding: 10px 8px;
+  }
+}

@@ -9,6 +9,7 @@
 
 body {
   font-family: var(--font-lobster-sans);
+  background-color: #f9f9f9;
 }
 
 a {

@@ -1,0 +1,14 @@
+.loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 300px;
+}
+
+@media screen and (max-width: 640px) {
+  .loader {
+    top: 180px;
+  }
+}
