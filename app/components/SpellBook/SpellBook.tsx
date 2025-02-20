@@ -11,7 +11,7 @@ const SpellBook = () => {
   const [spells, setSpells] = useState<Spell[]>([]);
 
   const fetchSpells = async () => {
-    const response = await axios.get("http://127.0.0.1:8000/spells/");
+    const response = await axios.get("http://localhost:8001/spells/");
     setSpells(response.data);
   };
 
@@ -24,13 +24,15 @@ const SpellBook = () => {
   }
 
   const handleDeleteSpell = (id: number) => {
-    setSpells(spells.filter(spell => spell.id !== id));
+    setSpells(spells.filter((spell) => spell.id !== id));
   };
 
   return (
     <div className={s.spellsContainer}>
       {spells.map((spell: Spell) => (
-        <SpellCard key={spell.id} spell={spell} onDelete={handleDeleteSpell}/>
+        <div className={s.spell} key={spell.id}>
+          <SpellCard spell={spell} onDelete={handleDeleteSpell} />
+        </div>
       ))}
     </div>
   );

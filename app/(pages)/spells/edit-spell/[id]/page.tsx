@@ -35,7 +35,7 @@ const EditSpell = () => {
   useEffect(() => {
     const fetchSpell = async () => {
       try {
-        const response = await axios.get(`http://127.0.0.1:8000/spells/${id}`);
+        const response = await axios.get(`http://localhost:8001/spells/${id}`);
         setSpell(response.data);
         reset(response.data);
       } catch (err) {
@@ -67,7 +67,7 @@ const EditSpell = () => {
       }
 
       const response = await axios.put(
-        `http://127.0.0.1:8000/spells/${id}`,
+        `http://localhost:8001/spells/${id}`,
         formData,
         {
           headers: {

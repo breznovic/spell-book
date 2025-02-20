@@ -1,10 +1,12 @@
 .spellsContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 100px;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 42px;
+}
+
+.spell {
+  justify-self: center;
 }
 
 @media screen and (max-width: 1600px) {
@@ -22,7 +24,6 @@
 @media screen and (max-width: 1024px) {
   .spellsContainer {
     padding: 40px;
-    justify-content: center;
   }
 }
 

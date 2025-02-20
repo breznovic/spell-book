@@ -4,7 +4,6 @@ import { useEffect, useState, use } from "react";
 import axios from "axios";
 import { Spell } from "@/app/utils/types";
 import s from "./page.module.css";
-import Image from "next/image";
 import Loader from "@/app/components/Loader/Loader";
 import Button from "@/app/components/Button/Button";
 import Link from "next/link";
@@ -24,7 +23,7 @@ const SpellDescription = ({ params }: SpellDetailProps) => {
       const fetchSpellDetails = async () => {
         try {
           const response = await axios.get(
-            `http://127.0.0.1:8000/spells/${id}`
+            `http://localhost:8001/spells/${id}`
           );
           setSpell(response.data);
         } catch (error) {
@@ -35,6 +34,8 @@ const SpellDescription = ({ params }: SpellDetailProps) => {
       fetchSpellDetails();
     }
   }, [id]);
+
+  console.log(spell);
 
   if (!spell) {
     return <Loader />;
@@ -48,7 +49,7 @@ const SpellDescription = ({ params }: SpellDetailProps) => {
           <p className={s.details}>Level: {spell.level}</p>
           <p className={s.details}>School: {spell.school}</p>
         </div>
-        <Image
+        <img
           src={spell.image_url}
           alt={spell.name}
           className={s.image}

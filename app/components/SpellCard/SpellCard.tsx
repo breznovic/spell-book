@@ -1,6 +1,5 @@
 import { Spell } from "@/app/utils/types";
 import s from "./SpellCard.module.css";
-import Image from "next/image";
 import Link from "next/link";
 import { BsFeather } from "react-icons/bs";
 import { FaBroom } from "react-icons/fa6";
@@ -31,7 +30,7 @@ const SpellCard: React.FC<SpellProps> = ({ spell, onDelete }) => {
 
   const handleConfirmDelete = async () => {
     const response = await axios.delete(
-      `http://127.0.0.1:8000/spells/${spell.id}`,
+      `http://localhost:8001/spells/${spell.id}`,
       {
         method: "DELETE",
       }
@@ -55,7 +54,7 @@ const SpellCard: React.FC<SpellProps> = ({ spell, onDelete }) => {
         </div>
         <div className={s.imageContainer}>
           <Link href={`/spells/${spell.id}`}>
-            <Image
+            <img
               src={spell.image_url}
               alt={spell.name}
               width={80}
