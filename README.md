@@ -44,7 +44,7 @@ Setup and Running the Project
 
     cd path/to/your/project
 
-3.  **Create file `docker-compose.yml` with text**:\
+3.  **Create file `docker-compose.yml` with text**:
 
 version: '3.8'
 
